@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caja de Comentarios</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .comentarios { margin-top: 20px; }
+        .comentario { border-bottom: 1px solid #ccc; padding: 10px 0; }
+        .fecha { font-size: 0.8em; color: gray; }
+        .btn-eliminar { margin-left: 10px; color: red; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h2>Caja de Comentarios</h2>
+    <form id="form-comentario">
+        <textarea id="comentario" rows="4" cols="50" placeholder="Escribe tu comentario..."></textarea><br>
+        <button type="submit">Agregar Comentario</button>
+    </form>
+    <div class="comentarios" id="lista-comentarios"></div>
+
+    <script>
+        document.getElementById("form-comentario").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const comentarioTexto = document.getElementById("comentario").value.trim();
+            if (comentarioTexto === "") return;
+            
+            const fecha = new Date();
+            const fechaTexto = fecha.toLocaleString();
+            
+            const comentarioDiv = document.createElement("div");
+            comentarioDiv.classList.add("comentario");
+            comentarioDiv.innerHTML = `
+                <p>${comentarioTexto}</p>
+                <span class="fecha">${fechaTexto}</span>
+                <span class="btn-eliminar">[Eliminar]</span>
+            `;
+            
+            comentarioDiv.querySelector(".btn-eliminar").addEventListener("click", function() {
+                comentarioDiv.remove();
+            });
+            
+            document.getElementById("lista-comentarios").appendChild(comentarioDiv);
+            document.getElementById("comentario").value = "";
+        });
+    </script>
+</body>
+</html>
