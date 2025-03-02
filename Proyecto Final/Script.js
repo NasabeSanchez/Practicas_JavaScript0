@@ -5,7 +5,8 @@ function Login(){
     const password=document.getElementById('password').value;
     const error=document.getElementById('error');
     if (username===Usuario1 && password===contraseña1){
-        window.location.href=home.html
+        localStorage.setItem("Usuario_Logeado",username); //para obtener el usuario de la persona que se esta logeando y poder utilizarla en la otra pagina
+        window.location.href="home.html";
     }else{
         error.textContent= "Usuario o contraseña incorrecto"
     }
