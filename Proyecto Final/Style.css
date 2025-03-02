@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+body{
+    font-family: "Inter", sans-serif;
+    height: 100;
+    display: flex;
+    margin: 0;
+}
+
+.container{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+   
+}
+.form_container{
+    width: 50%;
+    background-color: #f4baf6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+}
+
+.image_container{
+    width: 40px;
+    background: url(https://images.pexels.com/photos/936722/pexels-photo-936722.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) no-repeat,center;
+    
+}
+
+.Login_container{
+    width: 50px;
+    background-color: #E69597;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 15px;
+}
+label{
+    font-size: 12px;    
+}
+input{
+    width: 95%;
+}
